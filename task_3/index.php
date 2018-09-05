@@ -14,7 +14,7 @@ $figures = ['Circle', 'Pyramid', 'Rectangle']; // названия классо�
 $objects = []; // сюда сохраняем экземпляры классов
 
 //создаем 10 рандомных фигур
-for ($i=0; $i<=10; $i++) {
+for ($i=0; $i<10; $i++) {
     $random_fig = array_rand($figures, 1);
     $generator = new ObjectGenerator($figures[$random_fig]);
     array_push($objects, $generator->createObject());
@@ -22,7 +22,7 @@ for ($i=0; $i<=10; $i++) {
 
 $params = []; //здесь храним инфу для записи в json
 
-for ($i=0; $i<=10; $i++) {
+for ($i=0; $i<10; $i++) {
     $params[$i] = $objects[$i]->toString();
 }
 
