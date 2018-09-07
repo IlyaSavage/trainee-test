@@ -32,6 +32,12 @@ fwrite($file, json_encode($params).PHP_EOL);
 $json = file_get_contents('results.json');
 $json = json_decode($json, true);
 
+usort($json, function($a, $b) {
+    if($a['area'] === $b['area'])
+        return 0;
+    return $a['area'] > $b['area'] ? -1 : 1;
+});
+
 foreach ($json as $figure) {
     echo 'Figure: '.$figure['name'].', Area: '.$figure['area'].PHP_EOL;
 }
